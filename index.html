@@ -1,11 +1,197 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh">
 <head>
-  <meta charset="utf-8">
-  <title>我的主页</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Leo 的 GitHub 主页</title>
+  <style>
+    /* 全局样式 */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f9f9fb;
+      color: #24292e;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    /* 导航栏 */
+    nav {
+      background: white;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      padding: 15px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    nav .nav-links {
+      display: flex;
+      justify-content: flex-end;
+      gap: 30px;
+    }
+    nav a {
+      text-decoration: none;
+      font-weight: 600;
+      color: #0366d6;
+      font-size: 1.1em;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #004a99;
+    }
+
+    /* 首屏介绍 */
+    header {
+      text-align: center;
+      padding: 60px 20px 40px;
+    }
+    header h1 {
+      font-size: 2.5em;
+      color: #1f1f1f;
+      margin: 0 0 10px 0;
+    }
+    header p {
+      font-size: 1.2em;
+      color: #555;
+      max-width: 600px;
+      margin: 10px auto 20px;
+    }
+
+    /* 访客计数器 */
+    .counter {
+      margin-top: 15px;
+      font-size: 1.1em;
+    }
+
+    /* 项目网格 */
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+      margin-top: 40px;
+    }
+    .project-card {
+      background: white;
+      border-radius: 12px;
+      padding: 22px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+    .project-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.12);
+    }
+    .project-card h3 {
+      margin: 0 0 12px 0;
+      color: #2c3e50;
+      font-size: 1.3em;
+    }
+    .project-card p {
+      color: #666;
+      font-size: 0.95em;
+      margin: 0 0 14px 0;
+    }
+    .project-meta {
+      margin-top: 12px;
+      font-size: 0.9em;
+      color: #777;
+    }
+    .project-meta span {
+      margin-right: 16px;
+    }
+    .project-meta .lang {
+      padding: 3px 9px;
+      border-radius: 5px;
+      font-weight: 500;
+      font-size: 0.85em;
+    }
+    .lang.js { background: #f7df1e; color: black; }
+    .lang.py { background: #3776ab; color: white; }
+    .lang.ts { background: #2d79c7; color: white; }
+    .lang.html { background: #e34f26; color: white; }
+  </style>
 </head>
 <body>
-  <h1>你好，我的主页正在建设中！</h1>
-  <p>Stay tuned...</p>
+
+  <!-- 导航栏 -->
+  <nav>
+    <div class="container">
+      <div class="nav-links">
+        <a href="https://blog.csdn.net/leo0308" target="_blank">📚 我的博客</a>
+        <a href="mailto:liyong038@foxmail.com">📬 联系我</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 首屏介绍 -->
+  <header>
+    <div class="container">
+      <h1>你好，我是 Leo</h1>
+      <p>前端开发者 | 热爱开源与技术分享</p>
+
+      <!-- 访客计数器 -->
+      <div class="counter">
+        <img src="https://hitokori.vercel.app/api/hit.svg?username=leo038&repo=leo038.github.io&path=/&style=wave"
+             alt="访客计数器"
+             style="height: 2.3em;" />
+      </div>
+    </div>
+  </header>
+
+  <!-- 精选项目卡片（4个） -->
+  <div class="container">
+    <div class="projects">
+
+      <!-- 项目 1 -->
+      <a href="https://github.com/leo038/react-blog" target="_blank" class="project-card">
+        <h3>React 博客系统</h3>
+        <p>基于 React + Markdown 的静态博客，支持暗黑模式与响应式布局。</p>
+        <div class="project-meta">
+          <span>🌟 120</span>
+          <span class="lang js">JavaScript</span>
+        </div>
+      </a>
+
+      <!-- 项目 2 -->
+      <a href="https://github.com/leo038/node-api" target="_blank" class="project-card">
+        <h3>Node.js API 服务</h3>
+        <p>使用 Express 搭建 RESTful 接口，集成 JWT 认证与 MySQL。</p>
+        <div class="project-meta">
+          <span>🌟 85</span>
+          <span class="lang js">JavaScript</span>
+        </div>
+      </a>
+
+      <!-- 项目 3 -->
+      <a href="https://github.com/leo038/data-visualization" target="_blank" class="project-card">
+        <h3>数据可视化工具</h3>
+        <p>用 Python + Pandas + Matplotlib 实现数据清洗与图表生成。</p>
+        <div class="project-meta">
+          <span>🌟 60</span>
+          <span class="lang py">Python</span>
+        </div>
+      </a>
+
+      <!-- 项目 4 -->
+      <a href="https://github.com/leo038/resume-generator" target="_blank" class="project-card">
+        <h3>简历生成器</h3>
+        <p>输入 JSON 配置，一键生成美观的 HTML/CSS 简历并导出 PDF。</p>
+        <div class="project-meta">
+          <span>🌟 70</span>
+          <span class="lang ts">TypeScript</span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+
 </body>
 </html>
